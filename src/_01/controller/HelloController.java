@@ -16,7 +16,7 @@ public class HelloController {
 		return "_01/hello";
 	}
 	
-	@RequestMapping(value="/hello", method = RequestMethod.GET)
+	@RequestMapping(value={"/hello", "/hi", "/greetings"}, method = RequestMethod.GET)
     public String sayHello(ModelMap model) {
         model.addAttribute("greeting", "Hello World from Spring 4 MVC");
         return "_01/hello";

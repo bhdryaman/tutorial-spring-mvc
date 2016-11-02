@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+
+
+	<!-- 
+		The part "employee" of URL must be same of the controllerName "EmployeeController". 
+		/employee/add
+		/employee/remove
+	-->
+	
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+	
+	<bean class="_01.controller.EmployeeController">
+		<property name="methodNameResolver">
+			<bean class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+				<property name="mappings">
+					<props>
+						<prop key="/employee/add">add</prop>
+						<prop key="/employee/ekle">add</prop>
+						<prop key="/employee/remove">remove</prop>
+						<prop key="/employee/list">list</prop>
+					</props>
+				</property>
+			</bean>
+		</property>
+	</bean>
+ 
+
+	<!--
+		/worker/add
+		/worker/ekle
+	-->
+ 
+ 	<!--
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+
+	<bean name="/worker/*" class="_01.controller.EmployeeController">
+		<property name="methodNameResolver">
+			<bean class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+				<property name="mappings">
+					<props>
+						<prop key="/worker/add">add</prop>
+						<prop key="/worker/remove">remove</prop>
+						<prop key="/worker/ekle">add</prop>
+					</props>
+				</property>			
+			</bean>
+		</property>
+	</bean>
+	-->
+ 
+</beans>

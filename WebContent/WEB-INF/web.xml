@@ -13,8 +13,23 @@ id="WebApp_ID" version="3.1">
 		
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/01.xml</param-value>
+			<param-value>
+				<!-- 
+					/WEB-INF/01.handlerMapping.xml
+					/WEB-INF/01.beanNameUrlHandlerMapping.xml
+					/WEB-INF/01.simpleUrlHandlerMapping.xml
+					/WEB-INF/01.controllerClassNameHandlerMapping.xml
+					/WEB-INF/01.controllerBeanNameHandlerMapping.xml
+					/WEB-INF/02.url.xml
+					/WEB-INF/02.url.internalPathMethodNameResolver.xml
+					/WEB-INF/02.url.propertiesMethodNameResolver.xml
+					/WEB-INF/02.url.parameterMethodNameResolver.xml
+				-->
+				/WEB-INF/02.url.parameterMethodNameResolver.xml
+			</param-value>
 		</init-param>
+		
+		<load-on-startup>1</load-on-startup>
 		
 	</servlet>
 	
