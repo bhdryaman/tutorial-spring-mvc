@@ -8,5 +8,6 @@
 </head>
 <body>
 <h2>jobList.jsp</h2>
+<h3>${msg}</h3>
 </body>
 </html>
