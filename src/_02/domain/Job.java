@@ -8,7 +8,7 @@ public class Job {
 	private String location;
 	private String position;
 	private String description;
-	private Integer isPublic;
+	private Boolean isPublic;
 	
 	public Job() { }
 
@@ -18,11 +18,10 @@ public class Job {
 		this.company = company;
 		this.location = location;
 	}
-
 	public Integer getId() {
 		return Id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		Id = id;
 	}
 	public String getType() {
@@ -55,11 +54,17 @@ public class Job {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Integer isPublic() {
+	public Boolean getIsPublic() {
 		return isPublic;
 	}
-	public void setPublic(Integer isPublic) {
+	public void setIsPublic(Boolean isPublic) {
 		this.isPublic = isPublic;
+	}
+
+	@Override
+	public String toString() {
+		return "Job [Id=" + Id + ", type=" + type + ", company=" + company + ", location=" + location + ", position="
+				+ position + ", description=" + description + ", isPublic=" + isPublic + "]";
 	}
 
 }

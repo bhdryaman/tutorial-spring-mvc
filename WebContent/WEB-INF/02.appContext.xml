@@ -13,7 +13,7 @@
         ">
 
 	<!-- used true below to active matrix variable -->
-	<mvc:annotation-driven	enable-matrix-variables="true"/>
+	<mvc:annotation-driven	enable-matrix-variables="true" ignore-default-model-on-redirect="true"/>
 	
 	<!-- here for css and js -->
 	<mvc:resources mapping="/resources/**" location="resources/"/>

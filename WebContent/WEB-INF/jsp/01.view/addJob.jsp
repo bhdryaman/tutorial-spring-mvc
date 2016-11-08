@@ -1,23 +1,36 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"  %>
 
+<c:set var="jobUrl" value="${pageContext.request.contextPath}/jobs"/>
+
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<title>Products</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 	<link rel="stylesheet" type="text/css" media="screen" href="<c:url value="/resources/css/sidebar.css" />" /> 
+	<link rel="stylesheet" type="text/css" media="screen" href="<c:url value="/resources/css/bootstrap.min.css" />" />
+	<title>Products</title>
 </head>
 <body>
-	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1>Jobs</h1>
-				<p>Add job</p>
-			</div>		
-		</div>
-	</section>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+	
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">Brand</a>
+	    </div>
+	
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="${jobUrl}/all">All Jobs</a></li>
+	        <li><a href="${jobUrl}/add">Add Job</a></li>
+	      </ul>
+	    </div>
+	
+	</div>
+	</nav>
+	
 	<section class="container">
-		<form:form  modelAttribute="newJob" class="form-horizontal" method="post">
+		<form:form  modelAttribute="newJob" class="form-horizontal" method="POST">
 			<fieldset>
 				<legend>Add new product</legend>
 
@@ -34,12 +47,12 @@
 						<form:input id="company" path="company" type="text" class="form:input-large"/>
 					</div>
 				</div>
-
+				
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="unitPrice">Location</label>
+					<label class="control-label col-lg-2" for="unitPrice">Position</label>
 					<div class="col-lg-10">
 						<div class="form:input-prepend">
-							<form:input id="location" path="location" type="text" class="form:input-large"/>
+							<form:input id="position" path="position" type="text" class="form:input-large"/>
 						</div>
 					</div>
 				</div>
@@ -47,29 +60,15 @@
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="description">Description</label>
 					<div class="col-lg-10">
-						<!-- html input area karsilik gelmektedir. -->
 						<form:textarea id="description" path="description" rows = "2"/>
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="manufacturer">Manufacturer</label>
+					<label class="control-label col-lg-2" for="manufacturer">Location</label>
 					<div class="col-lg-10">				
-						 				
-						 <!-- HTML select option componentine karsilik gelmektedir. -->				
-						
-						<!-- hardcoded yaklasim -->
-						<!-- 
-						<form:select id="location" path="location" type="text" class="form:input-large">
-							<form:option value="Apple">Apple</form:option>
-							<form:option value="Google">Google</form:option>
-							<form:option value="Samsung">Samsung</form:option>
-						</form:select>
-						 -->
 						 
-						 <!-- dinamik yaklasim model attribute reference data -->
-						<!-- controller sinifimizdaki @ModelAttribute("manufacturerList") karsilik gelmektedir. -->
-						 <form:select id="location" path="location" type="text" class="form:input-large" items="${LocationList}"/>
+					<form:select id="location" path="location" type="text" class="form:input-large" items="${LocationList}"/>
 												 					  						
 					</div>
 				</div>
@@ -78,32 +77,13 @@
 					<label class="control-label col-lg-2" for="category">Category</label>
 					<div class="col-lg-10">
 					
-					<!-- 
-						<form:select id="isPublic" path="isPublic" type="text" class="form:input-large">
-							<form:option value="Laptop">Laptop</form:option>
-							<form:option value="Tablet">Tablet</form:option>
-							<form:option value="Smart Phone">Smart Phone</form:option>
-						</form:select>
-					 -->	
-						<form:select id="isPublic" path="isPublic" type="text" class="form:input-large" items="${categoryList}"/>
+					<form:select id="isPublic" path="isPublic" type="text" class="form:input-large" items="${isPublicMap}"/>
+					
+					<form:select id="type" path="type" type="text" class="form:input-large" items="${TypeList}"/>
 												 						 
 					</div>
 				</div>
 
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="condition">Condition</label>
-					<div class="col-lg-10">
-						<!-- html radio button componentine karsilik gelmektedir. -->					
-						<!-- 
-						<form:radiobutton path="isPublic" value="New" />New 
-						<form:radiobutton path="isPublic" value="Old" />Old 
-						<form:radiobutton path="isPublic" value="Refurbished" />Refurbished											
-						  -->
-						  
-						 <form:radiobuttons path="isPublic" items="${conditionMap}"/>
-					</div>
-				</div>
-				
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
 						<input type="submit" id="btnAdd" class="btn btn-primary" value ="Add"/>

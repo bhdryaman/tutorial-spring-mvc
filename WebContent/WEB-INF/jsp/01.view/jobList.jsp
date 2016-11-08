@@ -5,28 +5,33 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- 
-<link rel="stylesheet" type="text/css" media="screen" href="<c:url value="/resources/css/sidebar.css" />" /> 
-<link rel="stylesheet" type="text/css" media="screen" href="<c:url value="/resources/css/bootstrap.min.css" />" />
-<script src="<c:url value="/resources/js/jquery-2.2.0.min.js" />"></script>
-	
-<title>Products</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 	<link rel="stylesheet" type="text/css" media="screen" href="<c:url value="/resources/css/sidebar.css" />" /> 
+	<link rel="stylesheet" type="text/css" media="screen" href="<c:url value="/resources/css/bootstrap.min.css" />" />
+	<title>Products</title>
 </head>
 <body>
-	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h2>Jobs</h2>
-				<h3>Available products</h3>
-			</div>
-		</div>
-	</section>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+	
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">Brand</a>
+	    </div>
+	
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="${jobUrl}/all">All Jobs</a></li>
+	        <li><a href="${jobUrl}/add">Add Job</a></li>
+	      </ul>
+	    </div>
+	
+	</div>
+	</nav>
 
     <div id="wrapper">
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
+        <div id="sidebar-wrapper" style="margin-top: 50px;">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">                    
                         Type of working             
@@ -64,7 +69,7 @@
                 </li>
                 <li>
                 	<label class="label-align">
-                    	<input type="checkbox" name="location" value="izmir"><span>izmir</span>
+                    	<input type="checkbox" name="location" value="izmir"><span>İzmir</span>
                     </label>
                 </li>
                 <li>
@@ -151,5 +156,6 @@
 		</section>
 		</div>
 	</div>
+<script src="<c:url value="/resources/js/jquery-2.2.0.min.js" />"></script>
 </body>
 </html>
