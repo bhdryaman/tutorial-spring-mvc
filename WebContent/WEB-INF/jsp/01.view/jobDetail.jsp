@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <c:set var="jobUrl" value="${pageContext.request.contextPath}/jobs"/>
 
@@ -16,13 +17,13 @@
 	<div class="container-fluid">
 	
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">Brand</a>
+	      <a class="navbar-brand" href="#"><spring:message code="brand.name"/></a>
 	    </div>
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="${jobUrl}/all">All Jobs</a></li>
-	        <li><a href="${jobUrl}/add">Add Job</a></li>
+	        <li class="active"><a href="${jobUrl}/all"><spring:message code="jobs.all"/></a></li>
+	        <li><a href="${jobUrl}/add"><spring:message code="jobs.add"/></a></li>
 	      </ul>
 	    </div>
 	

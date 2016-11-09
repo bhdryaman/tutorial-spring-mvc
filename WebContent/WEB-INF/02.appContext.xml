@@ -27,5 +27,28 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="springMessages" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="tr" />
+	</bean>
+	
+	<mvc:interceptors>
+	
+		<bean id="localeChangeInterceptor"
+			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="language" />
+		</bean>
+		
+		<bean id="audit" class="_02.interceptors.AuditInterceptor"/>
+		
+	</mvc:interceptors>
 
 </beans>

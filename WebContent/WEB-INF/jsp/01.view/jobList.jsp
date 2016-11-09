@@ -1,4 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"  %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <c:set var="jobUrl" value="${pageContext.request.contextPath}/jobs"/>
 <c:set var="matrixUrl" value="${pageContext.request.contextPath}/jobs/filter"/>
@@ -16,15 +19,25 @@
 	<div class="container-fluid">
 	
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">Brand</a>
+	      <a class="navbar-brand" href="#"><spring:message code="brand.name"/></a>
 	    </div>
 	
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <div class="collapse navbar-collapse">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="${jobUrl}/all">All Jobs</a></li>
-	        <li><a href="${jobUrl}/add">Add Job</a></li>
+	        <li class="active"><a href="${jobUrl}/all"><spring:message code="jobs.all"/></a></li>
+	        <li><a href="${jobUrl}/add"><spring:message code="jobs.add"/></a></li>
 	      </ul>
 	    </div>
+
+		<ul class="nav navbar-nav navbar-right">
+		  <li>
+		  	<span>
+		  		<a href="?language=en" >English</a>|
+		  		<a href="?language=tr" >Türkce</a>
+		  	</span>
+		  </li>
+		</ul>
+   
 	
 	</div>
 	</nav>
@@ -55,7 +68,7 @@
                 </li>
                 
                 <li class="sidebar-brand">                    
-                        City                               
+                	<spring:message code="job.location"/>                   
                 </li>
                 <li>
                 	<label class="label-align">
@@ -78,8 +91,8 @@
                     </label>
                 </li>                
                 
-				<a style="margin-left:20px" onclick="prepareMatrix()"  name="search" id="search"						
-						class="btn btn-success" /></span> Search
+				<a style="margin-left:20px" onclick="prepareMatrix()"  name="search" id="search" class="btn btn-success" />
+					<spring:message code="job.search"/>
 				</a>
                 
             </ul>
@@ -114,20 +127,20 @@
 	<div id="page-content-wrapper">
 	<section class="container">
 	
-		<div class="row">
+		<div class="row" style="margin-top: 40px;" >
 		<div class="col-md-6">
 			<ul class="nav nav-tabs">
 				<li class="">
-					<a href="${jobUrl}/all">All Products</a>
+					<a href="${jobUrl}/all"><spring:message code="job.type.all"/></a>
 				</li>
 				<li>
-					<a href="${jobUrl}/full-time">Full-Time</a>
+					<a href="${jobUrl}/full-time"><spring:message code="job.type.full_time"/></a>
 				</li>
 				<li class="">
-					<a href="${jobUrl}/part-time">Part-Time</a>
+					<a href="${jobUrl}/part-time"><spring:message code="job.type.part_time"/></a>
 				</li>
 				<li class="">
-					<a href="${jobUrl}/other">Other</a>
+					<a href="${jobUrl}/other"><spring:message code="job.type.other"/></a>
 				</li>
 			</ul>
 		</div>
@@ -142,10 +155,9 @@
 							<p>${job.description}</p>
 							<p>${job.location}</p>
 							<p>
-								<a
-									href=" <c:url value="/jobs/get?id=${job.id}" /> "
-									class="btn btn-primary"> <span
-									class="glyphicon-info-sign glyphicon" /></span> Details
+								<a href=" <c:url value="/jobs/get?id=${job.id}" /> " class="btn btn-primary">
+									<span class="glyphicon-info-sign glyphicon" /></span>
+									<spring:message code="job.detail"/>
 								</a>
 							</p>
 						</div>
