@@ -17,11 +17,10 @@ public class AuditInterceptor extends HandlerInterceptorAdapter{
 	
 	private String ipAddress;
 	private String jobId;
-	
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse arg1, Object handler) throws Exception {
-		System.out.println("AuditInterceptor class...");
+		System.out.println("AuditInterceptor.preHandle()...");
 		System.out.println(request.getRequestURI().endsWith("jobs/add"));
 		if (request.getRequestURI().endsWith("jobs/add")) {
 
@@ -41,15 +40,15 @@ public class AuditInterceptor extends HandlerInterceptorAdapter{
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception arg3)
 			throws Exception {
+		System.out.println("AuditInterceptor.afterCompletion()...");
 		if (request.getRequestURI().endsWith("jobs/add") && response.getStatus() == 302) {
 			logger.info(String.format("A New job[%s] Added by %s on %s", jobId, ipAddress, getCurrentTime()));
 		}
 	}
 
 	@Override
-	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
-			ModelAndView modelAndView) throws Exception {
-
+	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+		System.out.println("AuditInterceptor.postHandle()...");
 		if (request.getRequestURI().endsWith("jobs/add")) {
 
 			if (request.getMethod().equals("GET")) {

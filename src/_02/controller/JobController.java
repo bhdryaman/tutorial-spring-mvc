@@ -32,7 +32,7 @@ public class JobController {
 
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("jobs", jobService.getAllJobs());
-		modelAndView.setViewName("01.view/jobList");
+		modelAndView.setViewName("_02/jobList");
 
 		System.out.println("..getAllJobs...");
 		return modelAndView;
@@ -45,7 +45,7 @@ public class JobController {
 		model.addAttribute("jobs", jobService.getJobsByLocation(jobLocation));
 		
 		System.out.println("...getJobsByLocation.... : " + jobLocation);
-		return "01.view/jobList";
+		return "_02/jobList";
 
 	}
 	
@@ -55,7 +55,7 @@ public class JobController {
 		model.addAttribute("jobs", jobService.getJobsByType(jobType));
 		
 		System.out.println("...getJobsByType.... : " + jobType);
-		return "01.view/jobList";
+		return "_02/jobList";
 
 	}
 
@@ -65,7 +65,7 @@ public class JobController {
 		model.addAttribute("job", jobService.getJobById(jobId));
 		
 		System.out.println("..getJobById... : " + jobId);
-		return "01.view/jobDetail";
+		return "_02/jobDetail";
 
 	}
 
@@ -74,7 +74,7 @@ public class JobController {
 			Model model) {
 
 		model.addAttribute("jobs", jobService.getJobsByFilter(filterParams));
-		return "01.view/jobList";
+		return "_02/jobList";
 
 	}
 
@@ -87,7 +87,7 @@ public class JobController {
 		job.setPosition("Software Architecture");
 
 		System.out.println("....getAddNewJobForm ...");
-		return "01.view/addJob";
+		return "_02/addJob";
 
 	}
 

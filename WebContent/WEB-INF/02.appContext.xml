@@ -50,5 +50,19 @@
 		<bean id="audit" class="_02.interceptors.AuditInterceptor"/>
 		
 	</mvc:interceptors>
+	
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.NumberFormatException">_02.exception/numberFormat</prop>
+				<prop key="java.sql.SQLException">_02.exception/sqlException2</prop>
+				<prop key="java.lang.NullPointerException">_02.exception/npe</prop>
+				<prop key="_02.model.DatabaseException">
+					_02.exception/dbException
+				</prop>
+			</props>
+		</property>
+	</bean>
 
 </beans>
