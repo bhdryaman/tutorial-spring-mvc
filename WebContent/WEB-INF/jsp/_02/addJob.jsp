@@ -39,7 +39,8 @@
 				<div class="form-group">
 					<label class="control-label col-lg-2 col-lg-2" for="productId">Job Id</label>
 					<div class="col-lg-10">
-						<form:input id="productId" path="id" type="text" class="form:input-large"/>
+						<form:input id="id" path="id" type="text" class="form:input-large"/>
+						<form:errors path="id" cssClass="text-danger"/>
 					</div>
 				</div>
 
@@ -47,6 +48,7 @@
 					<label class="control-label col-lg-2" for="name">company Name</label>
 					<div class="col-lg-10">
 						<form:input id="company" path="company" type="text" class="form:input-large"/>
+						<form:errors path="company" cssClass="text-danger"/>
 					</div>
 				</div>
 				
@@ -55,6 +57,7 @@
 					<div class="col-lg-10">
 						<div class="form:input-prepend">
 							<form:input id="position" path="position" type="text" class="form:input-large"/>
+							<form:errors path="position" cssClass="text-danger"/>
 						</div>
 					</div>
 				</div>
@@ -63,6 +66,7 @@
 					<label class="control-label col-lg-2" for="description">Description</label>
 					<div class="col-lg-10">
 						<form:textarea id="description" path="description" rows = "2"/>
+						<form:errors path="description" cssClass="text-danger"/>
 					</div>
 				</div>
 
@@ -71,7 +75,7 @@
 					<div class="col-lg-10">				
 						 
 					<form:select id="location" path="location" type="text" class="form:input-large" items="${LocationList}"/>
-												 					  						
+					<form:errors path="location" cssClass="text-danger"/>
 					</div>
 				</div>
 
@@ -80,8 +84,10 @@
 					<div class="col-lg-10">
 					
 					<form:select id="isPublic" path="isPublic" type="text" class="form:input-large" items="${isPublicMap}"/>
+					<form:errors path="isPublic" cssClass="text-danger"/>
 					
 					<form:select id="type" path="type" type="text" class="form:input-large" items="${TypeList}"/>
+					<form:errors path="type" cssClass="text-danger"/>
 												 						 
 					</div>
 				</div>

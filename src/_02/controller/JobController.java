@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.MatrixVariable;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import _02.domain.Job;
 import _02.service.JobService;
+import _02.validator.JobValidator;
 
 @Controller
 @RequestMapping("/jobs")
@@ -26,6 +28,9 @@ public class JobController {
 
 	@Autowired
 	private JobService jobService;
+	
+	@Autowired
+	private JobValidator jobValidator;
 
 	@RequestMapping("/all")
 	public ModelAndView getAllJobs() {
@@ -92,7 +97,15 @@ public class JobController {
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public ModelAndView addJobForm(@ModelAttribute("newJob") Job job) {
+	public ModelAndView addJobForm(@ModelAttribute("newJob") Job job, BindingResult result) {
+		
+		jobValidator.validate(job,result);
+		
+		if(result.hasErrors()){
+			ModelAndView modelAndView = new ModelAndView();
+			modelAndView.setViewName("_02/addJob");
+			return modelAndView;
+		}
 
 		// there are different ways to redirect without appending url queries
 		
