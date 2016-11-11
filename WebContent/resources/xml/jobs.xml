@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jobs>
+    <job>
+        <jid>1000</jid>
+        <company>Apple</company>
+        <type>Full-time</type>
+        <position>Software Engineer</position>
+        <location>İstanbul</location>
+    </job>
+    <job>
+        <jid>1001</jid>
+        <company>Samsung</company>
+        <type>Full-time</type>
+        <position>Software Engineer</position>
+        <location>İstanbul</location>
+    </job>
+    <job>
+        <jid>1002</jid>
+        <company>Microsoft</company>
+        <type>Full-time</type>
+        <position>Manager</position>
+        <location>İstanbul</location>
+    </job>
+    <job>
+        <jid>1003</jid>
+        <company>Google</company>
+        <type>Part-time</type>
+        <position>Software Developer</position>
+        <location>İstanbul</location>
+    </job>
+</jobs>

@@ -26,8 +26,9 @@ id="WebApp_ID" version="3.1">
 					/WEB-INF/01.url.parameterMethodNameResolver.xml
 					/WEB-INF/01.view.xmlViewResolver.xml
 					/WEB-INF/01.view.resourceBundleViewResolver.xml
+					/WEB-INF/02.appContext.xml
 				-->
-				/WEB-INF/02.appContext.xml
+					/WEB-INF/01.xsltViewResolver.xml
 			</param-value>
 		</init-param>
 		
