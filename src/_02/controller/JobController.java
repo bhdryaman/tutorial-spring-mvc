@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -97,7 +99,7 @@ public class JobController {
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public ModelAndView addJobForm(@ModelAttribute("newJob") Job job, BindingResult result) {
+	public ModelAndView addJobForm(@ModelAttribute("newJob") @Valid Job job, BindingResult result) {
 		
 		jobValidator.validate(job,result);
 		

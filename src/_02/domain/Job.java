@@ -1,12 +1,23 @@
 package _02.domain;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Job {
 	
-	private Integer Id;
+	@Min(10)
+	@Max(1000)
+	private Integer id;
+
 	private String type;
 	private String company;
 	private String location;
 	private String position;
+
+	@NotBlank
 	private String description;
 	private Boolean isPublic;
 	
@@ -14,15 +25,15 @@ public class Job {
 
 	public Job(Integer id, String company, String location) {
 		super();
-		Id = id;
+		this.id = id;
 		this.company = company;
 		this.location = location;
 	}
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 	public String getType() {
 		return type;
@@ -63,7 +74,7 @@ public class Job {
 
 	@Override
 	public String toString() {
-		return "Job [Id=" + Id + ", type=" + type + ", company=" + company + ", location=" + location + ", position="
+		return "Job [Id=" + id + ", type=" + type + ", company=" + company + ", location=" + location + ", position="
 				+ position + ", description=" + description + ", isPublic=" + isPublic + "]";
 	}
 
