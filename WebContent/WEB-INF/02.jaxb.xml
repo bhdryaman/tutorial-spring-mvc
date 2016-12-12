@@ -15,8 +15,10 @@
 	<bean id="jaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
 		<property name="classesToBeBound">
 			<list>
-				<value>_02.jaxb.model.Job</value>
-				<value>_02.jaxb.model.JobList</value>
+				<!--<value>_02.jaxb.model.Job</value>
+				<value>_02.jaxb.model.JobList</value>-->
+				<value>_02.domain.Job</value>
+				<value>_02.domain.JobList</value>
 			</list>
 		</property>
 	</bean>

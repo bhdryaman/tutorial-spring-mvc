@@ -7,10 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-//import _02.domain.Job;
-//import _02.domain.JobList;
-import _02.jaxb.model.Job;
-import _02.jaxb.model.JobList;
+import _02.domain.Job;
+import _02.domain.JobList;
+//import _02.jaxb.model.Job;
+//import _02.jaxb.model.JobList;
 
 @Controller
 public class JAXBEmployeeController {
