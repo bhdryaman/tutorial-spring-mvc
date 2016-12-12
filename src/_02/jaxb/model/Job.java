@@ -1,26 +1,16 @@
-package _02.domain;
+package _02.jaxb.model;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-
-import org.hibernate.validator.constraints.NotBlank;
 
 @XmlRootElement(name = "job")
 public class Job {
 	
-	@Min(10)
-	@Max(1000)
 	private Integer id;
-
 	private String type;
 	private String company;
 	private String location;
 	private String position;
-
-	@NotBlank
 	private String description;
 	private Boolean isPublic;
 	
@@ -33,49 +23,63 @@ public class Job {
 		this.company = company;
 		this.location = location;
 	}
+
 	@XmlElement
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	@XmlElement
 	public String getType() {
 		return type;
 	}
+
 	public void setType(String type) {
 		this.type = type;
 	}
+
 	@XmlElement
 	public String getCompany() {
 		return company;
 	}
+
 	public void setCompany(String company) {
 		this.company = company;
 	}
+
 	@XmlElement
 	public String getLocation() {
 		return location;
 	}
+
 	public void setLocation(String location) {
 		this.location = location;
 	}
+
 	public String getPosition() {
 		return position;
 	}
+
 	public void setPosition(String position) {
 		this.position = position;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public Boolean getIsPublic() {
 		return isPublic;
 	}
+
 	public void setIsPublic(Boolean isPublic) {
 		this.isPublic = isPublic;
 	}

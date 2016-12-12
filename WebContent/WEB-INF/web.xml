@@ -15,11 +15,11 @@ id="WebApp_ID" version="3.1">
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
 				<!-- 
-					/WEB-INF/01.handlerMapping.xml
-					/WEB-INF/01.beanNameUrlHandlerMapping.xml
-					/WEB-INF/01.simpleUrlHandlerMapping.xml
-					/WEB-INF/01.controllerClassNameHandlerMapping.xml
-					/WEB-INF/01.controllerBeanNameHandlerMapping.xml
+					/WEB-INF/01.controller.handlerMapping.xml	
+					/WEB-INF/01.controller.beanNameUrlHandlerMapping.xml
+					/WEB-INF/01.controller.simpleUrlHandlerMapping.xml
+					/WEB-INF/01.controller.controllerClassNameHandlerMapping.xml
+					/WEB-INF/01.controller.controllerBeanNameHandlerMapping.xml
 					/WEB-INF/01.url.xml
 					/WEB-INF/01.url.internalPathMethodNameResolver.xml
 					/WEB-INF/01.url.propertiesMethodNameResolver.xml
@@ -28,8 +28,10 @@ id="WebApp_ID" version="3.1">
 					/WEB-INF/01.view.resourceBundleViewResolver.xml
 					/WEB-INF/02.appContext.xml
 					/WEB-INF/01.xsltViewResolver.xml
-				-->
 					/WEB-INF/01.jsonResponse.xml
+					/WEB-INF/02.jaxb.xml
+				-->
+					/WEB-INF/02.jaxb.xml
 			</param-value>
 		</init-param>
 		

@@ -7,7 +7,7 @@
 						http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/context
 						http://www.springframework.org/schema/context/spring-context.xsd">
-<context:component-scan base-package="_01.service _01.controller"/>
+	
 
 	<!-- ViewResolver configuration -->
 
@@ -17,14 +17,8 @@
 	</bean>
 
 
-	<!-- ControllerBeanNameHandlerMapping configuration -->
+	<!-- HandlerMapping configuration and Controller Beans -->
 
-	<bean class="org.springframework.web.servlet.mvc.support.ControllerBeanNameHandlerMapping"/>
-
-
-	<!-- Controller Beans -->
-
-	<bean name="job" class="_01.controller.JobController"/>
- 	<bean name="company" class="_01.controller.CompanyController"/>
+	<context:component-scan base-package="_01.service _01.controller"/>
 
 </beans>
