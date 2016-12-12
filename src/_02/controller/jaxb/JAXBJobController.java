@@ -1,4 +1,4 @@
-package _02.jaxb.controller;
+package _02.controller.jaxb;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +13,9 @@ import _02.domain.JobList;
 //import _02.jaxb.model.JobList;
 
 @Controller
-public class JAXBEmployeeController {
+public class JAXBJobController {
 
-	@RequestMapping("/getEmployeeXML")
+	@RequestMapping("/getJobXML")
 	public ModelAndView getEmployeeXML() {
 
 		ModelAndView mv = new ModelAndView("marshallingView");
@@ -29,8 +29,8 @@ public class JAXBEmployeeController {
 
 	}
 
-	@RequestMapping("/getEmployeeListXML")
-	public ModelAndView getEmployeeListXML() {
+	@RequestMapping("/getJobListXML")
+	public ModelAndView getJobListXML() {
 		
 		Job job1 = new Job(101,"Google","İstanbul");
 		Job job2 = new Job(102,"Apple","İstanbul");

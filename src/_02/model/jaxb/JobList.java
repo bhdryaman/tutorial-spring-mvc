@@ -1,4 +1,4 @@
-package _02.jaxb.model;
+package _02.model.jaxb;
 
 import java.util.List;
 
