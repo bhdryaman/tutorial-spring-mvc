@@ -32,7 +32,7 @@ id="WebApp_ID" version="3.1">
 					/WEB-INF/02.jaxb.xml
 					/WEB-INF/02.json.xml
 				-->
-					/WEB-INF/02.json.xml
+					/WEB-INF/02.apache.tiles.xml
 			</param-value>
 		</init-param>
 		
