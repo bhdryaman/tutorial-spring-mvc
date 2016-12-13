@@ -30,8 +30,9 @@ id="WebApp_ID" version="3.1">
 					/WEB-INF/01.xsltViewResolver.xml
 					/WEB-INF/01.jsonResponse.xml
 					/WEB-INF/02.jaxb.xml
+					/WEB-INF/02.json.xml
 				-->
-					/WEB-INF/02.jaxb.xml
+					/WEB-INF/02.json.xml
 			</param-value>
 		</init-param>
 		
